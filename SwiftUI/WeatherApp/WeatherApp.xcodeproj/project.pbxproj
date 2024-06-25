@@ -8,17 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		4C0B21A52C1911EA005AAF28 /* WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B21A42C1911EA005AAF28 /* WeatherAppApp.swift */; };
-		4C0B21A72C1911EA005AAF28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B21A62C1911EA005AAF28 /* ContentView.swift */; };
+		4C0B21A72C1911EA005AAF28 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B21A62C1911EA005AAF28 /* MainView.swift */; };
 		4C0B21A92C1911EB005AAF28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B21A82C1911EB005AAF28 /* Assets.xcassets */; };
 		4C0B21AC2C1911EB005AAF28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B21AB2C1911EB005AAF28 /* Preview Assets.xcassets */; };
+		4C0B21B32C19BBB7005AAF28 /* DailyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B21B22C19BBB7005AAF28 /* DailyWeatherItemView.swift */; };
+		4C0B21B52C19C020005AAF28 /* WeekdayGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B21B42C19C020005AAF28 /* WeekdayGenerator.swift */; };
+		4C0B21B82C19CD8A005AAF28 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4C0B21B72C19CD8A005AAF28 /* Alamofire */; };
+		4C0B21BE2C19CE66005AAF28 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B21BD2C19CE66005AAF28 /* Weather.swift */; };
+		4CC372442C28E158004002F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC372432C28E158004002F8 /* MapView.swift */; };
+		4CC372462C29BB60004002F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC372452C29BB60004002F8 /* LocationManager.swift */; };
+		4CC372482C29E55C004002F8 /* GeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC372472C29E55C004002F8 /* GeoCoder.swift */; };
+		4CC4BF1C2C1A4DFB0065B147 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4BF1B2C1A4DFB0065B147 /* WeatherFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C0B21A12C1911EA005AAF28 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0B21A42C1911EA005AAF28 /* WeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppApp.swift; sourceTree = "<group>"; };
-		4C0B21A62C1911EA005AAF28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C0B21A62C1911EA005AAF28 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4C0B21A82C1911EB005AAF28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C0B21AB2C1911EB005AAF28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4C0B21B22C19BBB7005AAF28 /* DailyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherItemView.swift; sourceTree = "<group>"; };
+		4C0B21B42C19C020005AAF28 /* WeekdayGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayGenerator.swift; sourceTree = "<group>"; };
+		4C0B21BD2C19CE66005AAF28 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		4CC372432C28E158004002F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4CC372452C29BB60004002F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4CC372472C29E55C004002F8 /* GeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoder.swift; sourceTree = "<group>"; };
+		4CC4BF1B2C1A4DFB0065B147 /* WeatherFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0B21B82C19CD8A005AAF28 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				4C0B21A42C1911EA005AAF28 /* WeatherAppApp.swift */,
-				4C0B21A62C1911EA005AAF28 /* ContentView.swift */,
+				4CC4BF162C1A4D650065B147 /* Controller */,
+				4C0B21BC2C19CE22005AAF28 /* View */,
+				4C0B21BB2C19CE18005AAF28 /* Model */,
 				4C0B21A82C1911EB005AAF28 /* Assets.xcassets */,
 				4C0B21AA2C1911EB005AAF28 /* Preview Content */,
 			);
@@ -65,6 +83,35 @@
 				4C0B21AB2C1911EB005AAF28 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C0B21BB2C19CE18005AAF28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C0B21BD2C19CE66005AAF28 /* Weather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C0B21BC2C19CE22005AAF28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CC372432C28E158004002F8 /* MapView.swift */,
+				4C0B21B22C19BBB7005AAF28 /* DailyWeatherItemView.swift */,
+				4C0B21A62C1911EA005AAF28 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CC4BF162C1A4D650065B147 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C0B21B42C19C020005AAF28 /* WeekdayGenerator.swift */,
+				4CC4BF1B2C1A4DFB0065B147 /* WeatherFetcher.swift */,
+				4CC372452C29BB60004002F8 /* LocationManager.swift */,
+				4CC372472C29E55C004002F8 /* GeoCoder.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +130,9 @@
 			dependencies = (
 			);
 			name = WeatherApp;
+			packageProductDependencies = (
+				4C0B21B72C19CD8A005AAF28 /* Alamofire */,
+			);
 			productName = WeatherApp;
 			productReference = 4C0B21A12C1911EA005AAF28 /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 4C0B21982C1911E9005AAF28;
+			packageReferences = (
+				4C0B21B62C19CD8A005AAF28 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4C0B21A22C1911EA005AAF28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0B21A72C1911EA005AAF28 /* ContentView.swift in Sources */,
+				4CC372442C28E158004002F8 /* MapView.swift in Sources */,
+				4CC4BF1C2C1A4DFB0065B147 /* WeatherFetcher.swift in Sources */,
+				4CC372482C29E55C004002F8 /* GeoCoder.swift in Sources */,
+				4C0B21A72C1911EA005AAF28 /* MainView.swift in Sources */,
+				4C0B21B32C19BBB7005AAF28 /* DailyWeatherItemView.swift in Sources */,
+				4CC372462C29BB60004002F8 /* LocationManager.swift in Sources */,
+				4C0B21B52C19C020005AAF28 /* WeekdayGenerator.swift in Sources */,
 				4C0B21A52C1911EA005AAF28 /* WeatherAppApp.swift in Sources */,
+				4C0B21BE2C19CE66005AAF28 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +335,7 @@
 				DEVELOPMENT_TEAM = 5548YMMUN7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "User should see weather in their city";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +365,7 @@
 				DEVELOPMENT_TEAM = 5548YMMUN7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "User should see weather in their city";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C0B21B62C19CD8A005AAF28 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C0B21B72C19CD8A005AAF28 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C0B21B62C19CD8A005AAF28 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C0B21992C1911E9005AAF28 /* Project object */;
 }

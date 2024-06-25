@@ -10,39 +10,47 @@ import MapKit
 
 struct MapView: View {
     @Environment(\.dismiss) var dismiss
-    @State var pinLocation : CLLocationCoordinate2D = .init(latitude: CLLocationDegrees(52.5200), longitude: CLLocationDegrees(13.4050))
+    @Binding var pinLocation: CLLocationCoordinate2D
+    @Binding var isLocationSelected: Bool
     @State var mkMapView: MKMapView = .init()
+    @State var tempLoc: CLLocationCoordinate2D = CLLocationCoordinate2D()
+    @State private var cameraProsition: MapCameraPosition = .automatic
     
-    @State private var cameraProsition: MapCameraPosition = .camera(
-        MapCamera(
-            centerCoordinate: .init(latitude: CLLocationDegrees(52.5200), longitude: CLLocationDegrees(13.4050)),
-            distance: 4000000,
-            heading: 0,
-            pitch: 0
-        )
-    )
     
     var body: some View {
         NavigationView {
             ZStack{
                 MapReader { reader in
                     Map(position: $cameraProsition, interactionModes: [.all]){
-                        Annotation("Center", coordinate: pinLocation) {
-                            RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(.blue)
-                                .frame(width: 30, height: 30)
-                            
-                        }
+                        Annotation(coordinate: tempLoc) {
+                            Image("pin")
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .padding(.bottom, 60)
+                        } label: {}
                     }
                     .onTapGesture(perform: { screenCoord in
                         let loc = reader.convert(screenCoord, from: .local)
-                        pinLocation = loc!
+                        tempLoc = loc!
                     })
+                    .onAppear {
+                        tempLoc = pinLocation
+                        cameraProsition = .camera(
+                            MapCamera(
+                                centerCoordinate: .init(latitude: pinLocation.latitude, longitude: pinLocation.longitude),
+                                distance: 4000000,
+                                heading: 0,
+                                pitch: 0
+                            )
+                        )
+                    }
                 }
                 
                 VStack{
                     Spacer()
                     Button(action: {
+                        isLocationSelected = true
+                        pinLocation = tempLoc
                         dismiss()
                     }, label: {
                         Text("Select location")
@@ -51,7 +59,6 @@ struct MapView: View {
                         .frame(width: UIScreen.main.bounds.width - 60, height: 60).background(Color(.systemIndigo)).clipShape(.buttonBorder)                    }).padding(.bottom)
                 }
             }
-            
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -61,5 +68,6 @@ struct MapView: View {
 
 
 #Preview {
-    MapView()
+    @State var loc = CLLocationCoordinate2D(latitude: 52.5200, longitude: 13.4050)
+    return MapView(pinLocation: $loc, isLocationSelected: .constant(false), tempLoc: loc)
 }

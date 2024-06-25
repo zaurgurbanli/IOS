@@ -20,7 +20,7 @@ struct DailyWeatherItemView: View {
                 .foregroundColor(.white)
             Image(systemName: image)
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fit)
                 .symbolRenderingMode(.multicolor)
                 .frame(width: 50, height: 50)
             Text("\(temp)°")
