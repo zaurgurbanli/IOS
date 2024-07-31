@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C367ACA2C4C67370042A288 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C367AC92C4C67370042A288 /* SearchView.swift */; };
+		4C367ACC2C4C707A0042A288 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C367ACB2C4C707A0042A288 /* SearchItem.swift */; };
+		4C367ACE2C4C9E5F0042A288 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C367ACD2C4C9E5F0042A288 /* FadeTransition.swift */; };
 		4CC372562C2DDED5004002F8 /* PodcastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC372552C2DDED5004002F8 /* PodcastApp.swift */; };
 		4CC372582C2DDED5004002F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC372572C2DDED5004002F8 /* ContentView.swift */; };
 		4CC3725A2C2DDED7004002F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CC372592C2DDED7004002F8 /* Assets.xcassets */; };
@@ -24,9 +27,13 @@
 		4CC3727E2C2EC4EA004002F8 /* NewPodcastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3727D2C2EC4EA004002F8 /* NewPodcastItem.swift */; };
 		4CC372802C2EFF70004002F8 /* PodcastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3727F2C2EFF70004002F8 /* PodcastItem.swift */; };
 		4CC372822C2F0FB2004002F8 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC372812C2F0FB2004002F8 /* SideMenuView.swift */; };
+		4CE28C782C3E0A98000D06A3 /* MenuItemViem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE28C772C3E0A98000D06A3 /* MenuItemViem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C367AC92C4C67370042A288 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4C367ACB2C4C707A0042A288 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		4C367ACD2C4C9E5F0042A288 /* FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		4CC372522C2DDED5004002F8 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC372552C2DDED5004002F8 /* PodcastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastApp.swift; sourceTree = "<group>"; };
 		4CC372572C2DDED5004002F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +52,7 @@
 		4CC3727D2C2EC4EA004002F8 /* NewPodcastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodcastItem.swift; sourceTree = "<group>"; };
 		4CC3727F2C2EFF70004002F8 /* PodcastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastItem.swift; sourceTree = "<group>"; };
 		4CC372812C2F0FB2004002F8 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		4CE28C772C3E0A98000D06A3 /* MenuItemViem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,9 @@
 				4CC372742C2E3D55004002F8 /* TabBar.swift */,
 				4CC372762C2E3E2B004002F8 /* HeadingsItemView.swift */,
 				4CC3727D2C2EC4EA004002F8 /* NewPodcastItem.swift */,
+				4CE28C772C3E0A98000D06A3 /* MenuItemViem.swift */,
+				4C367AC92C4C67370042A288 /* SearchView.swift */,
+				4C367ACB2C4C707A0042A288 /* SearchItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 			children = (
 				4CC3726E2C2E02CF004002F8 /* ColorExtension.swift */,
 				4CC372702C2E1F93004002F8 /* DismissKeyboard.swift */,
+				4C367ACD2C4C9E5F0042A288 /* FadeTransition.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -234,14 +246,18 @@
 			files = (
 				4CC372772C2E3E2B004002F8 /* HeadingsItemView.swift in Sources */,
 				4CC372752C2E3D55004002F8 /* TabBar.swift in Sources */,
+				4CE28C782C3E0A98000D06A3 /* MenuItemViem.swift in Sources */,
 				4CC372672C2DE911004002F8 /* LoginView.swift in Sources */,
 				4CC372732C2E2274004002F8 /* MainView.swift in Sources */,
 				4CC3727C2C2EC2D4004002F8 /* BrowseView.swift in Sources */,
+				4C367ACA2C4C67370042A288 /* SearchView.swift in Sources */,
 				4CC372582C2DDED5004002F8 /* ContentView.swift in Sources */,
 				4CC372562C2DDED5004002F8 /* PodcastApp.swift in Sources */,
 				4CC3726F2C2E02CF004002F8 /* ColorExtension.swift in Sources */,
 				4CC3726A2C2DEFCF004002F8 /* InputField.swift in Sources */,
+				4C367ACE2C4C9E5F0042A288 /* FadeTransition.swift in Sources */,
 				4CC372802C2EFF70004002F8 /* PodcastItem.swift in Sources */,
+				4C367ACC2C4C707A0042A288 /* SearchItem.swift in Sources */,
 				4CC372712C2E1F93004002F8 /* DismissKeyboard.swift in Sources */,
 				4CC3727E2C2EC4EA004002F8 /* NewPodcastItem.swift in Sources */,
 				4CC372822C2F0FB2004002F8 /* SideMenuView.swift in Sources */,

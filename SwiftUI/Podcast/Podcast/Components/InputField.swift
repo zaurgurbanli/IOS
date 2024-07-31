@@ -38,19 +38,11 @@ struct InputField: View {
             UnevenRoundedRectangle(cornerRadii: .init(topLeading: 18, bottomLeading: 18, bottomTrailing: 0, topTrailing: 18)
                 )
             .stroke(Color(hex: 0x898F97), lineWidth: 1)
-        )
-
-
-
-
-
-
-           
-            
+        )       
     }
 }
 
 #Preview {
-    @State var input = ""
+    @Previewable @State var input = ""
     return InputField(input: $input, icon: "envelope", text: "Text")
 }

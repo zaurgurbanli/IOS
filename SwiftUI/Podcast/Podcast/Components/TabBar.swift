@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TabBar: View {
     var onPressMenu: ()-> Void
+    var onPressSearch: ()-> Void
+    let animationNS: Namespace.ID
+
     
     var body: some View {
         HStack{
@@ -21,13 +24,17 @@ struct TabBar: View {
                 .font(.system(size: 20))
                 .padding(.leading, 10)
             Spacer()
-            Image(systemName: "magnifyingglass")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .foregroundStyle(.white)
-                .padding(10)
-                .padding(.trailing)
+            Button(action: onPressSearch, label: {
+                Image(systemName: "magnifyingglass")
+                    .resizable()
+                    .matchedGeometryEffect(id: "search", in: animationNS)
+                    .frame(width: 20, height: 20)
+                    .foregroundStyle(.white)
+                    .padding(10)
+                    .padding(.trailing)
+                    
 
+            })
             Button(action: onPressMenu, label: {
                 Image(systemName:"line.3.horizontal")
                     .resizable()
@@ -41,5 +48,7 @@ struct TabBar: View {
 }
 
 #Preview {
-    TabBar {}
+    @Previewable @Namespace var ns
+    return TabBar(onPressMenu: {}, onPressSearch: {}, animationNS: ns).background(.indigo)
+
 }

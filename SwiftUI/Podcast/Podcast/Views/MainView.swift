@@ -10,33 +10,39 @@ import SwiftUI
 struct MainView: View {
     @State private var selectedCategory: String = "Recent"
     @State var presentSideMenu = false
+    @State var onSearchActive = false
     private var categories = ["Recent", "Topics", "Authors", "Episodes"]
+    @Namespace private var animationNS
+    @State private var currentIndex = 0
+
     
     var body: some View {
         ZStack{
             ScrollView{
                 TabBar(onPressMenu: {
-                    withAnimation {
-                        presentSideMenu = true
-                    }
-                })
+                    presentSideMenu = true
+                }, onPressSearch: {
+                    onSearchActive = true
+                }, animationNS: animationNS)
                 .padding(.horizontal, 20)
                 .padding(.leading, 10)
                 
-                
                 ScrollView(.horizontal) {
-                    HStack{
-                        ForEach(podcastsItem, id: \.id) { item in
+                    LazyHStack{
+                        ForEach(podcasts, id: \.id) { item in
                             NewPodcastItem(bgImage: item.bgImage, title: item.title, date: item.date, time: item.time, author: item.author, isNew: item.new) {}
                         }
                     }
                     .padding(.leading, 30)
                     .padding(.trailing, 10)
                     .padding(.top, 15)
+                    .scrollTargetLayout()
                     
                 }
                 .scrollIndicators(.hidden)
                 .padding(.vertical, 30)
+                .scrollTargetBehavior(.viewAligned)
+                    
                 
                 Text("Listen podcasts")
                     .foregroundStyle(.white)
@@ -68,15 +74,40 @@ struct MainView: View {
             .scrollIndicators(.hidden)
             .ignoresSafeArea(.keyboard)
             .dismissKeyboardOnTap()
-
-            if presentSideMenu {
-                Color.black.opacity(0.5).frame(maxWidth: .infinity, maxHeight: .infinity).ignoresSafeArea().onTapGesture {
-                    withAnimation(.smooth) {
+            
+            ZStack{
+                if presentSideMenu || onSearchActive {
+                    Color(hex: onSearchActive ? 0x081727 : 0x000, opacity: 0.8)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .ignoresSafeArea()
+                        .transition(.opacity)
+                        .onTapGesture {
+                            presentSideMenu = false
+                            onSearchActive = false
+                        }
+                }
+            }
+            .animation(.easeInOut, value: presentSideMenu)
+            
+            ZStack{
+                if onSearchActive {
+                    SearchView(animationNS: animationNS)
+                        .padding(.horizontal, 20)
+                }
+            }
+            .animation(.easeInOut , value: onSearchActive)
+            
+            ZStack{
+                if presentSideMenu {
+                    SideMenuView {
                         presentSideMenu = false
                     }
+                    
                 }
-                SideMenuView(presentSideMenu: $presentSideMenu)
             }
+            .animation(.easeInOut, value: presentSideMenu)
+            
+            
         }
     }
 }

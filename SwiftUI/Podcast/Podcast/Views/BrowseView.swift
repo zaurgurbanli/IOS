@@ -9,10 +9,11 @@ import SwiftUI
 
 struct BrowseView: View {
     @State private var selectedHeading: Int = 0
-    
+    @Namespace private var animationNS
+
     var body: some View {
         ScrollView{
-            TabBar(onPressMenu: {})
+            TabBar(onPressMenu: {}, onPressSearch: {}, animationNS: animationNS)
                 .padding(.leading, 10)
                 .padding(.trailing, 20)
             

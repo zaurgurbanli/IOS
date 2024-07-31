@@ -64,6 +64,7 @@ struct LoginView: View {
             .background(Color("background"))
             .scrollIndicators(.hidden)
             .ignoresSafeArea(.keyboard)
+            .navigationBarBackButtonHidden()
             .dismissKeyboardOnTap()
         }
 
